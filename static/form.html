@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js">
+    <script src="https://unpkg.com/htmx.org@1.9.6" integrity="sha384-FhXw7b6AlE/jyjlZH5iHa/tTe9EpJ1Y55RjcgPbjeWMskSxZt1v9qkxLJWNJaGni" crossorigin="anonymous"></script>
+    <title>sanjay kirana store</title>
+</head>
+<body class="container">
+    <h1>sanjay kirana store</h1>
+    <div class="row mt-4 g-4">
+        <div class="col-8">
+            <h1 class="mb-4">Converter</h1>
+            <form metos="POST" action="/form" hx-post="/add-film/" hx-target="#film-list" hx-swap="beforeend" hx-indicator="#spinner">
+                <div class="mb-3">
+                    <label for="film-title">enter gram that cust want</label>
+                    <input type="text" name="name" id="name" class="form-control" value="" />
+                </div>
+                <div class="mb-3">
+                    <label for="film-director">Enter price of product</label>
+                    <input type="text" name="price" id="price" class="form-control" value="" />
+                </div>
+                <button type="submit" class="btn btn-primary" value="submit">
+                    <span class="spinner-border spinner-border-sm htmx-indicator" id="spinner" role="status" aria-hidden="true"></span>
+                    Submit
+                </button>
+                <div class="mb-3">
+                    <label for="film-director">Cust should give money</label>
+                    <input type="text" name="director" id="film-director" class="form-control" />
+                </div>
+            </form>
+        </div>
+
+        <div class="col-4">
+            <h1 class="mb-4">Converter</h1>
+            <form hx-post="/add-film/" hx-target="#film-list" hx-swap="beforeend" hx-indicator="#spinner">
+                <div class="mb-3">
+                    <label for="film-title">enter money that cust gives</label>
+                    <input type="text" name="title" id="film-title" class="form-control" />
+                </div>
+                <div class="mb-3">
+                    <label for="film-director">Enter price of product in kg</label>
+                    <input type="text" name="director" id="film-director" class="form-control" />
+                </div>
+                <button type="submit" class="btn btn-primary">
+                    <span class="spinner-border spinner-border-sm htmx-indicator" id="spinner" role="status" aria-hidden="true"></span>
+                    Submit
+                </button>
+                <div class="mb-3">
+                    <label for="film-director">we have to give gram to cust</label>
+                    <input type="text" name="director" id="film-director" class="form-control" />
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html> 
